@@ -1,0 +1,152 @@
+scalar GraphQLDate
+
+type User {
+  _id: ID!
+  name: String!
+  email: String!
+  passwordHash: String!
+  createdAt: GraphQLDate
+  updatedAt: GraphQLDate
+}
+
+type AddUserResponse {
+  user: User
+  errorMessage: String
+}
+
+type Review {
+  userId: ID!
+  placeId: ID!
+  reviewText: String!
+  rating: Int!
+  createdAt: GraphQLDate
+  placeDetails: PlaceDetails 
+}
+
+type PlaceDetails {
+  name: String
+  photos: String
+  rating: Float
+  total_ratings: Int
+  num_reviews: Int
+  price: String
+  price_level: String
+  ranking: String
+  tastes: String
+  awards: String
+  cuisine: String
+  address: String
+  address_extended: String
+  post_town: String
+  phone: String
+  tel: String
+  website: String
+}
+
+type ReviewExistenceResponse {
+  exists: Boolean!
+  rating: Int
+  reviewText: String
+}
+
+type MessageResponse {
+  success: Boolean!
+  message: String
+}
+
+type Favorite{
+  userId: ID!
+  placeId: ID!
+  placeDetails: PlaceDetails
+}
+
+type ScheduleResponse {
+  success: Boolean!
+  message: String!
+  id: ID
+}
+
+type Itinerary{
+  userId: ID!
+  _id: ID!
+  name: String!
+  scheduleData: String!
+  createdAt: GraphQLDate
+  updatedAt: GraphQLDate
+}
+
+type Preference{
+  userId: ID
+  preferences: String
+  createdAt: GraphQLDate
+  updatedAt: GraphQLDate
+}
+
+type PreferenceResponse {
+  success: Boolean!
+  message: String!
+}
+
+input InputUser{
+	name: String!
+	phone: String
+	email: String!
+	passwordHash: String!
+	createdAt: GraphQLDate
+}
+
+input PlaceDetailsInput {
+  name: String
+  photos: String
+  rating: Float
+  total_ratings: Int
+  num_reviews: Int
+  price: String
+  price_level: String
+  ranking: String
+  tastes: String
+  awards: String
+  cuisine: String
+  address: String
+  address_extended: String
+  post_town: String
+  phone: String
+  tel: String
+  website: String
+}
+
+input ReviewInput {
+  userId: ID!
+  placeId: ID!
+  reviewText: String!
+  rating: Int!
+  createdAt: GraphQLDate
+  placeDetails: PlaceDetailsInput! 
+}
+
+type Query {
+	listUsers:[User]!
+  listAllReviews: [Review]!
+  getReviewsByUserId(userId: ID!): [Review]!
+  getReviewsByPlaceId(placeId: ID!): [Review]!
+  checkReviewExistence(userId: ID!, placeId: ID!): ReviewExistenceResponse!
+  getFavorites(userId: ID!): [ID]!
+  listAllFavorites:[Favorite]!
+  getFavoritesByUserId(userId: ID!): [Favorite]!
+  getItineraryByUserId(userId: ID!): [Itinerary]!
+  listAllItinerary: [Itinerary]!
+  getUserPreferencesByUserId(userId: ID!): Preference!
+  listAllUserPreferences: [Preference]!
+}
+
+type Mutation {
+	addUser(user: InputUser!): AddUserResponse!
+	login(email: String!, password: String!): User!
+  addReview(reviewInput: ReviewInput!): Review!
+  addFavorite(userId: ID!, placeId: ID!, placeDetails: PlaceDetailsInput!): MessageResponse!
+  removeFavorite(userId: ID!, placeId: ID!): MessageResponse!
+  addOrUpdateSchedule(userId: ID!, _id: ID, name: String!, scheduleData: String!): ScheduleResponse
+  removeSchedule(userId: ID!, itineraryId: ID!): MessageResponse!
+  addOrUpdatePreferences(userId: ID!, preferences: String!): PreferenceResponse!
+}
+
