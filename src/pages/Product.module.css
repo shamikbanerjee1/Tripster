@@ -1,0 +1,84 @@
+.product {
+  /* margin: 2.5rem; */
+  padding: 1.5rem 1rem;
+  background-color: black;
+  min-height: calc(94.45vh);
+}
+
+.product section {
+  width: clamp(80rem, 80%, 90rem);
+  margin: 6rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+  align-items: center;
+}
+
+.product img {
+  width: 100%;
+}
+
+.product h2 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.product p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.product section a {
+  margin-top: 2rem;
+}
+
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  gap: 2rem;
+}
+
+.featuredImage {
+   transform: scale(1.2);
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.featuredImage2{
+  max-width: 60%;
+  height: auto;
+}
+
+/* Similar styling can be applied to other sections */
+.subscriptionBox,.travelGear, .localExperience, .digitalGuides, .membershipProgram {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.subscriptionBox img {
+  max-width: 50%; /* Reduce the image size to half of its container */
+  height: auto; /* Keep the aspect ratio of the image */
+}
+
+/* Style for the text content next to the image */
+.subscriptionBoxContent {
+  flex: 1; /* Take up the remaining space */
+  padding-left: 2rem; /* Add some padding between the image and the text */
+}
+
+/* Add responsive grid styles, card designs, button styles, etc., as needed */
+
+.introText {
+  padding: 2rem; /* Add padding */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+  border-radius: 8px; /* Optional: rounded corners */
+  margin-bottom: 2rem; /* Ensure space between this and the next section */
+}
+
+.slide-in {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}

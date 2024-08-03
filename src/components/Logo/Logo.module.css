@@ -1,0 +1,15 @@
+.logo {
+  height: 5.2rem;
+}
+
+.container {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  gap: 15px;
+}
+
+tripsterText {
+  font-weight: bold; /* Increase font weight */
+  margin-left: 8px; /* Add some space between the icon and the text */
+  /* Adjust the font-size as needed */
+}

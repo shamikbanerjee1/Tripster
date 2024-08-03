@@ -1,0 +1,55 @@
+
+.signInDiv {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  
+  height: 50px; 
+  padding: 0 20px;
+  width: 90%; 
+  margin: 0 auto;
+}
+.login {
+  padding: 1.5rem 1rem;
+  background-color: black;
+  min-height: calc(94.45vh);
+}
+
+.loginCard {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  left: 490px;
+  top: 100px;
+}
+
+.loginButton {
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #10a37f; /* Adjust the color to match your design */
+  color: white;
+  
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* Add any other styles you need for your specific design */
